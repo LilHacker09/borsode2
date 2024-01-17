@@ -1,0 +1,137 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(90deg, #4F00BC, #29ABE2);
+    color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    padding: 20px 0;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+nav {
+    margin-top: 10px;
+}
+.agyfasztfogokkapni{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    color: black;
+}
+
+li {
+    margin-right: 20px;
+    
+}
+.wau{
+    padding-left: 30px;
+}
+.sortaodas{
+    margin-bottom: 12px;
+    color: black;
+}
+.nemnav{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #66a2ff;
+}
+
+main {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    color: black;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 50%;
+    background-color: #333;
+    transition: width 0.3s;
+}
+
+h2:hover::after {
+    width: 100%;
+}
+
+.pre1{
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    color: black;
+    
+}
+.pre2{
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    color: black;
+}
+.pre3{
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    color: black;
+}
+.pre4{
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    color: black;
+}
+
+p{
+    color: black;
+}
+footer {
+    padding: 20px 0;
+    background: linear-gradient(90deg, #29ABE2, #4F00BC);
+}
+@media only screen and (max-width: 768px) {
+    main {
+        padding: 20px;
+    }
+}

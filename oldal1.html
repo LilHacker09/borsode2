@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Folyamatok</title>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Folyamatok</h1>
+            <nav>
+                <ul class="agyfasztfogokkapni">
+                    <li><a href="./index.html">Főoldal</a></li>
+                    <li><a href="./oldal.html">Szolgáltatások</a></li>
+                    <li><a href="./oldal1.html">Folyamatok</a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="container" id="introduction" class="Folyamatok felsorolás1">
+            <h2>Folyamatok:</h2>
+            <h4 class="sortaodas">1. Folyamatok listázása:</h4>
+            <ul class="nemnav">
+                <li class="wau">Aktív folyamatok listázása: A ps aux paranccsal láthatod az összes futó folyamatot a rendszereden, beleértve a felhasználóneveket, a CPU- és memóriahasználatot stb.</li>
+                <li class="wau">Folyamatok részletes listázása: Ezek az interaktív eszközök folyamatosan frissítik a futó folyamatok listáját, és részletes információkat nyújtanak a rendszer teljesítményéről.</li>
+            </ul>
+            <pre class="pre1">
+                <code class="basic-commands">
+                    ps aux
+                </code>
+                <p>Részletes listázáshoz:</p>
+                <code class="basic-commands">
+                    apt update -y && apt upgrade -y
+                    apt install htop -y
+                    htop
+                </code>
+            </pre>
+
+            <!-- ÚJ FELSOROLÁS -->
+
+            <h4 class="sortaodas">2. Folyamatok indítása és leállítása:</h4>
+            <ul class="nemnav">
+                <li class="sortaodas">Folyamatok indítása: Egy folyamatot háttérben futtatva a command & parancsot használhatod, és ez lehetővé teszi, hogy továbbra is a parancssoron dolgozz, miközben a folyamat fut.</li>
+                <li class="sortaodas">Folyamatok leállítása: A kill paranccsal tudod leállítani egy folyamatot. A folyamatoknak különböző jelzéseket küldhetsz, például a SIGTERM-et a szokásos leállításhoz vagy a SIGKILL-t az azonnali leállításhoz.</li>
+            </ul>
+            <pre class="pre2">
+                <code class="basic-commands">
+                    randomCommand &
+                </code>
+                <p>Folyamatok leállítása:</p>
+                <code class="basic-commands">
+                kill processID
+                killall processname
+                </code>
+            </pre>
+
+            <!-- ÚJ FELSOROLÁS -->
+
+            <h4 class="sortaodas">3. Folyamatok ellenőrzése:</h4>
+            <ul class="nemnav">
+                <li class="sortaodas">Folyamatok figyelése: A watch paranccsal egy parancsot periodikusan lefuttathatsz, így folyamatosan monitorozhatod annak kimenetét.</li>
+                <li class="sortaodas">Folyamatok erőltetett leállítása (kill -9 processID): A kill -9 paranccsal küldesz egy SIGKILL jelzést, ami azonnali leállítást eredményez.</li>
+            </ul>
+            <pre class="pre3">
+                <code class="basic-commands">
+                    watch -n 1 command
+                </code>
+                <p>Erőltetett leállítás:</p>
+                <code class="basic-commands">
+                    kill -9 processID
+                </code>
+            </pre>
+                    <!-- ÚJ FELSOROLÁS -->
+            <br>
+            <h4 class="sortaodas">4. Prioritások és erőforrások:</h4>
+            <ul class="nemnav">
+                <li class="wau">Folyamatok prioritásának módosítása: A paranccsal változtathatod meg egy futó folyamat prioritását, amely befolyásolhatja a CPU-allokációt.</li>
+                <li class="wau">Erőforrások korlátozása: A systemd-cgls paranccsal csoportokat (cgroup) hozhatsz létre és kezelhetsz, amelyekkel korlátozhatod a folyamatok erőforrásfelhasználását.</li>
+            </ul>
+            <pre class="pre4">
+                <code class="basic-commands">
+                    renice
+                </code>
+                <p>Korlátozások:</p>
+                <code class="basic-commands">
+                    systemd-cgls
+                    systemd-cgtop
+                </code>
+            </pre>
+
+            <!-- ÚJ FELSOROLÁS -->
+
+           <h4 class="sortaodas">5.	Folyamatok részletes információi:</h4>
+           <ul class="nemnav">
+            <li class="wau">A /proc könyvtárban találhatók olyan fájlok, amelyek tartalmazzák a rendszer és a folyamatok aktuális állapotáról szóló információkat. Például a /proc/processID/status fájlban megtalálhatók egy folyamat részletes információi.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Borsode</p>
+        </div>
+    </footer>
+
+</body>
+</html>

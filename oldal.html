@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Szolgáltatások</title>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Szolgáltatások</h1>
+            <nav>
+                <ul class="agyfasztfogokkapni">
+                    <li><a href="./index.html">Főoldal</a></li>
+                    <li><a href="./oldal.html">Szolgáltatások</a></li>
+                    <li><a href="./oldal1.html">Folyamatok</a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="introduction">
+            <h2>Szolgáltatások összegzett leírása</h2>
+            <p>A Linux operációs rendszer erőteljes és széleskörű eszközkészlettel rendelkezik a szolgáltatások és folyamatok hatékony kezeléséhez. A szolgáltatások olyan hátterben futó alkalmazások, amelyek szervezik és tartják fenn a rendszer működését. A systemctl paranccsal indíthatjuk, állíthatjuk le és monitorozhatjuk ezeket. A folyamatok dinamikus tevékenységeket jelentenek, és a ps, top, htop paranccsal követhetők, indíthatók vagy leállíthatók. A konfigurációs fájlok, a prioritások és az erőforrások kezelése további szintet ad a finomhangoláshoz. Ezek az eszközök segítenek optimalizálni a rendszer teljesítményét és alkalmazkodni a változó igényekhez.</p>
+        </section>
+        <section class="container" id="introduction" class="Szolgáltatások felsorolás1">
+            <h2>Szolgáltatások:</h2>
+            <h4 class="sortaodas">1. Szolgáltatások kezelése:</h4>
+            <ul class="nemnav">
+                <li class="wau">Szolgáltatások listázása: Ez a parancs kilistázza az összes rendszerindításkor betöltött szolgáltatást, és megmutatja azok állapotát (pl., fut vagy sem).</li>
+            </ul>
+            <pre class="pre1">
+                <code class="basic-commands">
+                    systemctl list-units
+                </code>
+            </pre>
+            <ul class="nemnav">
+                <li class="sortaodas">2. Egy szolgáltatás állapotának lekérdezése </li>
+                <li>A systemctl status paranccsal megnézheted egy adott szolgáltatás futási állapotát, beleértve a naplóüzeneteket és egyéb információkat.</li>
+            </ul>
+            <pre class="pre2">
+                <code class="basic-commands">
+                    systemctl status serviceName
+                </code>
+            </pre>
+            <ul class="nemnav">
+                <li class="sortaodas">3. Szolgáltatás indítása, leállítása, újraindítása</li>
+                <li>Ezek a parancsok lehetővé teszik a szolgáltatások kezelését. Az indítás elindítja a szolgáltatást, a leállítás leállítja, az újraindítás pedig leállítja, majd újraindítja.</li>
+            </ul>
+            <pre class="pre3">
+                <code class="basic-commands">
+                    systemctl -start, systemctl -stop, systemctl -restart serviceName
+                </code>
+            </pre>
+                    <!-- ÚJ FELSOROLÁS -->
+            <br>
+            <h4 class="sortaodas">2. Szolgáltatások beállítása:</h4>
+            <ul class="nemnav">
+                <li class="wau">Szolgáltatások automatikus indulása/leállítása a rendszerindításkor: Ezzekkel a parancsokkal beállíthatod, hogy egy szolgáltatás automatikusan elinduljon vagy leálljon a rendszerindításkor.</li>
+            </ul>
+            <pre class="pre4">
+                <code class="basic-commands">
+                    systemctl enable serviceName
+                    systemctl disable serviceName
+                </code>
+            </pre>
+           <h4 class="sortaodas">3. Szolgáltatások konfigurálása:</h4>
+           <ul class="nemnav">
+            <li class="wau">Szolgáltatások konfigurációs fájljai: Ezekben definiálhatod a szolgáltatások indítási feltételeit, környezeti változókat és egyéb paramétereket.</li>
+            </ul>
+        <pre class="pre4">
+            <code class="basic-commands">
+                cd /etc/systemd/system/
+                nano /etc/systemd/system/serviceName.service
+            </code>
+        </pre>
+        </section>
+        <!-- <section class="container" id="introduction" class="Szolgáltatások felsorolás2">
+            <ul class="nemnav">
+                <li class="sortaodas">1. Szolgáltatások kezelése:</li>
+                <li class="wau">Szolgáltatások listázása: Ez a parancs kilistázza az összes rendszerindításkor betöltött szolgáltatást, és megmutatja azok állapotát (pl., fut vagy sem).</li>
+            </ul>
+            <pre class="pre1">
+                <code class="basic-commands">
+                    systemctl list-units
+                </code>
+            </pre>
+        </section> -->
+
+        <!-- <section id="basic-commands">
+            <h2>asd</h2>
+            <p>ASD</p>
+            <pre><code class="bash">ls
+cd
+mkdir mydirectory</code></pre>
+        </section> -->
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Borsode</p>
+        </div>
+    </footer>
+
+
+</body>
+</html>
