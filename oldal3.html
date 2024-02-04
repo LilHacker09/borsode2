@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="képek/image.png" type="image/x-icon">
+    <title>Borsode Linux</title>
+</head>
+<body>
+
+
+    <header>
+        <div class="container">
+            <h1>SSH server konfigurálása linuxon</h1>
+            <nav>
+                <ul class="agyfasztfogokkapni">
+                    <li><a href="./index.html">Főoldal</a></li>
+                    <li><a href="./oldal.html">Szolgáltatások</a></li>
+                    <li><a href="./oldal1.html">Folyamatok</a></li>
+                    <li><a href="./oldal2.html">Nginx</a></li>
+                    <li><a href="./oldal3.html">Openssh-server</a></li>
+                    <li><a href="./oldal4.html">Források</a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="container" id="introduction" class="Szolgáltatások felsorolás1">
+            <h2>Konfiguráció:</h2>
+            <h4 class="sortaodas">1. Az ssh server feltelepítése:</h4>
+            <ul class="nemnav">
+                <li class="wau">Az apt package manager-el feltelepítjük az ssh server-t</li>
+            </ul>
+            <pre class="pre1">
+                <code class="basic-commands">
+                    apt update -y && apt install openssh-server -y
+                </code>
+            </pre>
+            <img src="./képek/opensshserverapt.png" alt="openssh apt">
+            <ul class="nemnav">
+                <li class="sortaodas">2. Az ssh server configurálása</li>
+                <li class="wau">Nyílvánvalóan minden informatikus nem szereti a default configokat módosítgatni, de biztonsági szempontból nagyon is hasznosak ezek a dolgok, hiszen ha egy nyílvános portra tesszük az ssh-t sokkal könnyebben fognak minket feltörni, stb.....</li>
+
+            </ul>
+            <pre class="pre1">
+                <code class="basic-commands">
+                    cd /etc/ssh
+                    nano sshd_config
+                    Itt módosíthatunk rengeteg beállítást, de mi most csak a portot fogjuk módosítani.
+                </code>
+            </pre>
+            <img src="./képek/sshconfig.png" alt="open ssh configig való eljutás">
+            <img src="./képek/sshconfigfile.png" alt="open ssh config file">
+            <ul class="nemnav">
+                <li class="sortaodas">3. Config exiting, újraindítás, és felcsatlakozás</li>
+            </ul>
+            <pre class="pre1">
+                <code class="basic-commands">
+                    Linuxon:
+                    systemctl restart/start ssh ssh.service
+                    vagy 
+                    service ssh restart/start
+                    Egyéb eszközön, ahonnan felkívánunk csatlakozni a szerverünkre:
+                    mondjuk windows:
+                    ssh felhasználónév@szerver-név/ip-cím/dns-szervername(domain) -p (ha van külön port)
+                    A mi esetünkben ez így nézne ki:
+                    ssh root@69.69.69.69 -p 666
+                </code>
+            </pre>
+            <img src="./képek/sshservicerestart.png" alt="servicerestart">
+        </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Borsode >> Totyik Róbert</p>
+        </div>
+    </footer>
+
+</body>
+</html>

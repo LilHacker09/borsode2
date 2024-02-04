@@ -1,0 +1,33 @@
+Az ssh használata a parancssorban egyszerű, paraméterként legalább egy dolgot kell megadni, a cél számítógép nevét vagy IP címét.
+
+ssh Borsode.suncity.hu
+The authenticity of host 'Borsode.suncity.hu (193.225.32.11)' can't be established.
+RSA key fingerprint is d6:37:8c🆎ba:a5:11:c8:8b:7b:07:ef:19:de:5e:16.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'Borsode.suncity.hu,193.225.32.11' (RSA) to the list of known hosts.
+Debian GNU/Linux 6.0
+Password:
+
+A parancs kiadása után a célgép bekéri a jelszavadat, amennyiben az helyes, beléptet, és elindítja a /etc/passwd fájl rád vonatkozó sorában levő shellt, ez a Linux rendszereken szinte mindig a /bin/bash. A bash kiír egy promptot és várja a parancsaidat. Kilépned a logout vagy exit parancsokkal vagy Ctrl-d billentyűkombinációval kell. Ekkor tulajdonképpen a parancsértelmezőből  lépsz ki, ami a kapcsolat megszakítását eredményezi.
+
+Ha a célgépen más a felhasználó név, mint a forrás gépen akkor a célgép neve kiegészíthető a felhasználó nevével így:
+
+ssh neu.jani@Borsode.suncity.hu
+
+Az ssh-nak számos paramétere van, és a távoli munkavégzésen kívül sok egyéb feladatra is használható. 
+
+Minden felhasználónak lehetősége van az ssh parancs működésének beállítására egy konfigurációs fájlmegírásával, ennek szokványos helye a home könyvtárában levő .ssh/config fájl. Lássunk egy példát, melyben megmutatok néhány lehetőséget, amellyel a mindennapokban kényelmesebbé teheted a munkádat!
+
+ServerAliveInterval 60
+
+Host www.linux-szerver.hu
+  User neu.jani
+  Port 4222
+
+Host hungari
+  HostName hungari.neumann.hu
+  User neu.jani
+
+Host *
+  User root
+A fájl több részre osztható, az elsőben az általános beállítások találhatók, azok, amelyek minden esetben érvényre jutnak. Ez után megadhatók olyanok is, amelyek csak megadott géphez történő kapcsolódás esetén érvényesülnek.

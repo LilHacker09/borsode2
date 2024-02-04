@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="képek/image.png" type="image/x-icon">
+    <title>Nginx webszerver</title>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Nginx webszerver szolgáltatás</h1>
+            <nav>
+                <ul class="agyfasztfogokkapni">
+                    <li><a href="./index.html">Főoldal</a></li>
+                    <li><a href="./oldal.html">Szolgáltatások</a></li>
+                    <li><a href="./oldal1.html">Folyamatok</a></li>
+                    <li><a href="./oldal2.html">Nginx</a></li>
+                    <li><a href="./oldal3.html">Openssh-server</a></li>
+                    <li><a href="./oldal4.html">Források</a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="introduction">
+            <h2>Nginx webszerver szolgáltatás telepítése linux operációs rendszeren.</h2>
+        </section>
+        <section class="container" id="introduction" class="Szolgáltatások felsorolás1">
+            <h2>Konfiguráció:</h2>
+            <h4 class="sortaodas">1. Nginx feltelepítése:</h4>
+            <ul class="nemnav">
+                <li class="wau">Szerintünk az apt parancsot nem nagyon kell magyarázni.</li>
+            </ul>
+            <pre class="pre1">
+                <code class="basic-commands">
+                    apt update -y && apt install nginx -y
+                </code>
+            </pre>
+            <br>
+            <ul class="nemnav">
+                <li class="wau">Ha nem dobott vissza semmi féle error-t akkor feltelepült a szolgáltatásunk</li>
+            </ul>
+            <br>
+            <ul class="nemnav">
+                <li class="sortaodas">2. Hozzuk létre az alap weboldalunkat</li>
+                <li>El fogunk menni az nginx default configjának megfelelő helyre, ott létrehozunk egy html fájlt, majd beleillesztünk egy html alapot.</li>
+            </ul>
+            <pre class="pre2">
+                <code class="basic-commands">
+                    cd /var/www/html
+                    touch index.html
+                    nano index.html
+                </code>
+            </pre>
+            <ul>
+                <li>Elmentjük a fájlt, vagyis kilépünk CTRL+X billentyűvel</li>
+            </ul>
+            <img src="./képek/nginx--indexhtml.png" alt="indexhtml">
+            <ul class="nemnav">
+                <li class="sortaodas">3. most fogjuk configurálni magát a webszervert</li>
+                <li>El kell menni az nginx default configjának a helyére azaz a /etc/nginx/sites-enabled és itt fogjuk szerkeszteni a configot</li>
+            </ul>
+            <pre class="pre3">
+                <code class="basic-commands">
+                    cd /etc/nginx/sites-enabled
+                    nano default
+                </code>
+            </pre>
+            <ul>
+                <li class="sortaodas">Ezek után custom beállításokat fogunk tudni beállítani, mint például a webszerver által használt portot, a fájloknak a helyét és akár az ssl security-t is.</li>
+            </ul>
+            <img src="./képek/nginx--sitesenabled.png" alt="sites-enabled">
+            <img src="./képek/sites-enabled config.png" alt="sitesenabledconfig">
+            <ul class="nemnav">4. szolgáltatás elindítása</ul>
+                <li class="wau">Szolgáltatásunk elindítása a már megtanult parancs alapján.</li>
+            
+            <pre class="pre4">
+                <code class="basic-commands">
+                    service nginx restart
+                    vagy
+                    systemctl restart nginx
+                </code>
+            </pre>
+            <img src="./képek/nginx serverstatus.png" alt="serverstatus">
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Borsode >>  Szigeti Hunor</p>
+        </div>
+    </footer>
+
+
+</body>
+</html>

@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background: linear-gradient(90deg, #4F00BC, #29ABE2);
-    color: #fff;
+    color: white;
 }
 
 .container {
@@ -37,6 +37,7 @@ li {
 }
 .wau{
     padding-left: 30px;
+    color: black;
 }
 .sortaodas{
     margin-bottom: 12px;
@@ -46,6 +47,9 @@ li {
     list-style: none;
     margin: 0;
     padding: 0;
+    color: black;
+}
+.asd{
     color: black;
 }
 a {
@@ -60,11 +64,19 @@ a:hover {
 }
 
 main {
-    background-color: #fff;
+    background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 40px;
     margin-top: 20px;
     border-radius: 5px;
+}
+main.inverted {
+    background-color: black;
+    box-shadow: 0 0 10 px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    margin-top: 20px;
+    border-radius: 5px;
+    color: white;
 }
 
 section {
@@ -73,6 +85,12 @@ section {
 
 h2 {
     color: black;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+h2.inverted {
+    color: white;
     position: relative;
     display: inline-block;
     padding-bottom: 10px;

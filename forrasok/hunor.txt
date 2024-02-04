@@ -1,0 +1,56 @@
+nginx
+Hogy telepítsük az Nginx-et, hasznaljuk az alábbi parancsokat:
+
+sudo apt update -y
+sudo apt install nginx -y
+
+Ezzel fel is települt az nginx default configgal.
+A default config szerint létrehozott egy alap html fájlt ide: /var/www/html/ . Jussunk el a mappába, majd hozzunk létre egy saját html fájlt.
+
+cd /var/www/html
+touch index.html
+nano index.html
+
+Az alábbiakat beillesztjük az index.html fájlunkba, igy a honlapunknak már lesz egy váza;
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Hello, Nginx!</title>
+</head>
+<body>
+    <h1>Szia anya!</h1>
+    <p>Működik ez a csodaszerver default configgal</p>
+</body>
+</html>
+
+Elmentjük a fájlt. Az ezutáni lépésekben fogunk virtuális hostot setupolni, hogy az Nginx erről a helyről tudjon oldalakat megjeleníteni.
+
+cd /etc/nginx/sites-enabled
+nano default
+
+server {
+       listen 80;
+       listen [::]:80;
+
+       server_name _;
+
+       root /var/www/html;
+       index index.html;
+
+       location / {
+               try_files $uri $uri/ =404;
+       }
+}
+
+A root az a mappa ahol az index.html fájlunkat találjuk. server_name bármi lehet, csak az egyszerűség kedvéért így neveztük el.
+
+Ahhoz hogy működjön az oldalunk, simán elindítjuk a szolgáltatásunkat.
+ubuntu eszközön:
+systemctl start nginx
+debian és vagy más eszközön:
+service nginx restart
+
+Nézzük meg, hogy müködik-e amit csinaltunk. Menjünk fel a localhost címre
+Ha mindent jól csináltunk, akkor betölt az egyszerű html weboldalunk.
