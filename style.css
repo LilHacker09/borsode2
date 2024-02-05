@@ -30,6 +30,9 @@ nav {
     display: flex;
     color: black;
 }
+.bouo{
+max-width: 1200px;
+}
 
 li {
     margin-right: 20px;
@@ -69,14 +72,6 @@ main {
     padding: 40px;
     margin-top: 20px;
     border-radius: 5px;
-}
-main.inverted {
-    background-color: black;
-    box-shadow: 0 0 10 px rgba(0, 0, 0, 0.1);
-    padding: 40px;
-    margin-top: 20px;
-    border-radius: 5px;
-    color: white;
 }
 
 section {
